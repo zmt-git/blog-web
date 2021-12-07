@@ -1,0 +1,83 @@
+@import "../../styles/color";
+.blogInfo{
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  background: #fff;
+  padding: 12px 20px 0;
+  transition: all .3s;
+}
+.blogInfo:hover{
+  background: rgba(227, 220, 220, 0.25);
+}
+.blogInfoUser{
+  font-size: 14px;
+  color: $text-2;
+  display: flex;
+  align-items: center;
+  line-height: 22px;
+  & span{
+    &:after, &:before{
+      margin: 0 10px;
+      content: '';
+      height: 14px;
+      width: 1px;
+      display: inline-block;
+      background: $text-3;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+.blogInfoContent{
+  margin-top: 10px;
+  display: flex;
+}
+.blogInfoText{
+  flex: 1;
+  overflow: hidden;
+}
+.blogInfoImg{
+  flex-shrink: 0;
+  width: 120px;
+  height: 80px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & img{
+    max-height: 80px;
+    max-width: 120px;
+  }
+}
+.blogInfoTitle{
+  width: 100%;
+  line-height: 24px;
+  color: $text-1;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.blogInfoDes{
+  color: $text-3;
+  line-height: 22px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.blogInfoAction{
+  margin-bottom: 12px;
+  display: flex;
+}
+.blogInfoActionItem{
+
+}
+.blogInfoActionItemIcon{
+  color: $text-3;
+  font-size: 16px;
+  margin-right: 5px;
+  font-weight: 600;
+}
+.blogInfoActionItemValue{
+  color: $text-3;
+  font-size: 13px;
+  margin-right: 20px;
+}

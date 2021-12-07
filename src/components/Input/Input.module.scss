@@ -1,0 +1,27 @@
+.blogInput{
+  display: inline-block;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 4px 4px 4px 10px;
+  border: 1px solid #d9d9d9;
+  transition: all .3s;
+  flex: 1;
+  display: flex;
+}
+.blogInputInner{
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  flex: 1;
+  height: 100%;
+}
+.blogInputFocus{
+  box-shadow: 0 0 0 1.5px rgba(24, 144, 255, 0.2);
+  border: 1px solid #1890ff;
+}
+.blogInputIcon{
+  cursor: pointer;
+}
+.blogInputIcon:hover{
+  color: #1890ff;
+}

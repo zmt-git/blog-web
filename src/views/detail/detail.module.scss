@@ -1,0 +1,58 @@
+@import "../../styles/color";
+.detail{
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.detailContent{
+  max-width: 960px;
+  min-height: 700px;
+  margin: auto;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 24px 24px 0;
+}
+.detailContentUser{
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+.detailContentUserCenter{
+  flex: 1;
+  padding: 0 10px;
+}
+.user-des{
+  line-height: 22px;
+  &-name{
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+}
+.article-des{
+  line-height: 16px;
+  color: $text-3;
+  font-size: 13px;
+  margin-top: 2px;
+  &-time{
+    margin-right: 10px;
+  }
+}
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 367px;
+  & img{
+    max-height: 367px;
+    max-width: 912px;
+  }
+}
+.title{
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+.detailContentArticle{
+
+}
+
