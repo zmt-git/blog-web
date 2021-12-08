@@ -1,0 +1,61 @@
+.blog-msg-container{
+  position: fixed;
+  top: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 50;
+  user-select: none;
+}
+
+.blog_message{
+  position: relative;
+  padding:5px 10px;
+  font-size: 13px;
+  line-height: 22px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px 0 #ebebeb;
+  user-select: none;
+}
+.blog_title{
+  color: #262626;
+  margin-left: 10px;
+  user-select: none;
+}
+.blog-web-msg--success{
+  color: #a0d911;
+}
+.blog-web-msg--error{
+  color: #f5222d;
+}
+.blog-web-msg--warning{
+  color: #fadb14;
+}
+.blog-web-msg--primary{
+  color: #1890ff;
+}
+.blog-web-msg--loading{
+  color: #1890ff;
+}
+
+.fade-top-enter {
+  top: -30px;
+  opacity: 0;
+}
+.fade-top-enter-active {
+  top: 0;
+  opacity: 1;
+  transition: all .3s;
+}
+.fade-top-exit {
+  top: 0;
+  opacity: 1;
+}
+.fade-top-exit-active {
+  top: -30px;
+  opacity: 0;
+  transition: all .3s;
+}
+
+

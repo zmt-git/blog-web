@@ -14,15 +14,21 @@
   cursor: pointer;
   padding: 0 10px;
   font-size: 13px;
+  position: relative;
 }
 
 .blogTypeItemInner{
+  position: absolute;
+  top: 45px;
+  left: 10px;
   box-shadow: 1px 3px 5px 1px #e1e1e1;
   max-width: 200px;
   display: flex;
   flex-wrap: wrap;
   padding: 5px;
   background: #ffffff;
+  min-height: 100px;
+  min-width: 150px;
 }
 .blogTypeItemInnerName:hover{
   color: $primary-color;

@@ -4,7 +4,9 @@ export default function BlogTypeItem (props) {
   const [show, setShow] = useState(false)
 
   const showSub = () => {
-    setShow(true)
+    if (props.children.length) {
+      setShow(true)
+    }
   }
 
   const hidden = () => {
@@ -17,12 +19,12 @@ export default function BlogTypeItem (props) {
       onMouseEnter={showSub}
       onMouseLeave={hidden}
     >
-      <span onClick={() => props.onClick(props.parent)} className={style.blogTypeItemInnerName}>{props.parent.name}</span>
+      <span onClick={() => props.onClick(props.parent)} className={style.blogTypeItemInnerName}>{props.parent.categoryName}</span>
       {props.children ?
         show ?
           <ul className={style.blogTypeItemInner}>{
             props.children.map(child => (
-              <li className={style.blogTypeItemInnerItem} key={child.id} onClick={() => props.onClick(child)}>{child.name}</li>
+              <li className={style.blogTypeItemInnerItem} key={child.id} onClick={() => props.onClick(child)}>{child.categoryName}</li>
             ))
           } </ul> : null
       : null}

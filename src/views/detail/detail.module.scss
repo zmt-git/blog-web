@@ -2,7 +2,6 @@
 .detail{
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
 }
 .detailContent{
   max-width: 960px;
@@ -10,7 +9,7 @@
   margin: auto;
   background: #ffffff;
   box-sizing: border-box;
-  padding: 24px 24px 0;
+  padding: 24px;
 }
 .detailContentUser{
   margin-bottom: 24px;
@@ -22,9 +21,9 @@
   padding: 0 10px;
 }
 .user-des{
-  line-height: 22px;
+  margin-bottom: 10px;
   &-name{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     margin-right: 10px;
   }
@@ -53,6 +52,6 @@
   margin-bottom: 15px;
 }
 .detailContentArticle{
-
+  margin-bottom: 10px;
 }
 

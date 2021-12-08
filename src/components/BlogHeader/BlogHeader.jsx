@@ -27,6 +27,11 @@ export default function BlogHeader (props) {
   const onClick = () => {
     navigate({ pathname: '/writeArticle' })
   }
+
+  const signIn = () => {
+
+  }
+
   return (
     <div className='border-bottom bg-white'>
       <div className={`${style.header}`}>
@@ -46,7 +51,7 @@ export default function BlogHeader (props) {
             onSuffixClick={onSearch}/>
           {showBtn ? <Button className={style.btn}  onClick={onClick}>写文章</Button> : null}
         </div>
-        {/*<Button onClick={signIn} plain>登录</Button>*/}
+        <Button onClick={signIn} plain>登录</Button>
       </div>
     </div>
   )

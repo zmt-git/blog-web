@@ -2,20 +2,19 @@ import React, { useState, useEffect } from 'react'
 import BlogHeader from "../../components/BlogHeader/BlogHeader"
 import ReactMarkdown from 'react-markdown'
 import style from './detail.module.scss'
-import hljs from 'highlight.js';
+import hljs from 'highlight.js'
+import moment from "moment";
 import Avatar from '../../components/Avatar/Avatar'
-import Button from "../../components/Button/Button";
+import Button from "../../components/Button/Button"
+import formatter from "../../fomatter/formatter";
+import { useLocation } from 'react-router-dom'
+import { getQuery } from "../../utils";
+import { getInfoBlog } from '../../api/blog'
+import { readBlog } from '../../api/blog'
 
-
-import png from '../../assets/test/1.png'
 export default function Detail (props) {
-  const [blog, setBlog] = useState({
-    title: '测试标题',
-    content: "```@import '~highlight.js/styles/github.css';```",
-    createUser: 'zmt',
-    createTime: '2021年12月3日',
-    read: 1690
-  })
+  const png = ''
+  const [blog, setBlog] = useState({})
 
   const highlightCallBack = () => {
     document.querySelectorAll("pre, code").forEach(block => {
@@ -24,7 +23,34 @@ export default function Detail (props) {
     });
   };
 
-  useEffect(highlightCallBack)
+  const location = useLocation()
+
+  const read = async () => {
+    try {
+      await readBlog({ id: getQuery(location).get('id')})
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  const getDetail = async () => {
+    try {
+      const data = await getInfoBlog({ id: getQuery(location).get('id')})
+      setBlog(data.result)
+    } catch (e) {
+      // TODO 错误处理
+      console.log(e)
+    }
+  }
+
+  useEffect(() => {
+    async function fetchData () {
+      await getDetail()
+      await read()
+      highlightCallBack()
+    }
+    fetchData()
+  }, [])
 
   return (
     <div className={`${style.detail}`}>
@@ -34,19 +60,21 @@ export default function Detail (props) {
           <Avatar img={png}/>
           <div className={style.detailContentUserCenter}>
             <p className={style['user-des']}>
-              <span className={style['user-des-name']}>{blog.createUser}</span>
+              <span className={style['user-des-name']}>{formatter.userFormatter(blog.authorId)}</span>
             </p>
             <p className={style['article-des']}>
-              <span className={style['article-des-time']}>{blog.createTime}</span>
+              <span className={style['article-des-time']}>{moment(blog.createTime).format('YYYY[年]MM[年]DD[日]')}</span>
               <span>阅读 {blog.read}</span>
             </p>
           </div>
           <Button plain>关注</Button>
         </div>
 
-        <div className={style['img']}>
-          <img src={png} alt='test' />
-        </div>
+        {
+          blog.img ? <div className={style['img']}>
+            <img src={blog.img} alt='图片' />
+          </div> : null
+        }
 
         <h1 className={style.title}>{blog.title}</h1>
 

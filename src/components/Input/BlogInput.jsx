@@ -21,12 +21,13 @@ export default function BlogInput (props) {
   }
 
   return (
-    <div className={`${style.blogInput} ${focus ? style.blogInputFocus : ''} `}>
+    <div className={`${style.blogInput} ${focus ? style.blogInputFocus : ''} `} style={props.style}>
       { props.perfix ? <span
         className={`iconfont ${props.perfix} ${style.blogInputIcon}`}
         onClick={props.onPerfixClick}
       /> : null}
       <input
+        type={props.type ? props.type : 'text'}
         placeholder={props.placeholder}
         className={style.blogInputInner}
         value={value}
